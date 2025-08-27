@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jozó Márk Portfolio</title>
+  <meta name="description" content="System Engineer" />
+  <style>
+    :root{
+      --bg: #0b0f17;           /* near-black */
+      --panel: #0f172a;        /* dark slate */
+      --panel-2: #0b1220;      /* darker panel */
+      --text: #e5e7eb;         /* light */
+      --muted: #94a3b8;        /* slate-300 */
+      --blue: #3b82f6;         /* primary */
+      --blue-2:#60a5fa;        /* accent */
+      --outline: rgba(96,165,250,.35);
+      --ring: rgba(59,130,246,.55);
+      --ok: #22c55e;
+      --warn:#f59e0b;
+      --err: #ef4444;
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(2,8,23,.45);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: radial-gradient(1200px 800px at 80% -10%, rgba(37,99,235,.15), transparent),
+                  radial-gradient(1000px 600px at -10% 110%, rgba(59,130,246,.12), transparent),
+                  var(--bg);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+      color:var(--text);
+      font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Inter, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      letter-spacing:.2px;
+    }
+
+    a{color:var(--blue); text-decoration: none;}
+    img{max-width:100%;display:block}
+    .hidden{display:none !important}
+
+    /* Shell */
+    .wrap{max-width:1200px;margin-inline:auto;padding:24px 20px 64px}
+    .topbar{position:sticky;top:0;z-index:50;background:linear-gradient(180deg, rgba(11,15,23,.9), rgba(11,15,23,.35) 70%, transparent);backdrop-filter: blur(8px)}
+    .switcher{
+      display:flex;gap:8px;flex-wrap:wrap;align-items:center;justify-content:center;padding:16px
+    }
+    .switcher button{
+      appearance:none;border:1px solid var(--outline);background:linear-gradient(180deg, var(--panel), var(--panel-2));
+      color:var(--text);padding:10px 14px;border-radius:999px;cursor:pointer;transition:.25s transform,.25s border-color,.25s background;
+      box-shadow: 0 2px 0 rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.03);
+    }
+    .switcher button:hover{border-color:var(--blue-2)}
+    .switcher button[aria-pressed="true"]{outline:2px solid var(--ring);border-color:var(--blue);}
+
+    .templates{margin-top:10px}
+
+    /* Utilities */
+    .card{background:linear-gradient(180deg, var(--panel), var(--panel-2));border:1px solid var(--outline);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .chip{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--outline);padding:6px 10px;border-radius:999px;background:rgba(15,23,42,.6)}
+    .muted{color:var(--muted)}
+    .grid{display:grid;gap:16px}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;border:1px solid var(--outline);text-decoration:none;background:linear-gradient(180deg, #0a1220, #0b1220);}
+    .btn:hover{border-color:var(--blue)}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+
+    /* Template 1: Nebula */
+    .t1-hero{display:grid;grid-template-columns: 1.1fr 1fr;gap:24px;align-items:center}
+    .avatar{width:120px;height:120px;border-radius:50%;border:2px solid var(--blue);background:
+      conic-gradient(from 180deg, rgba(59,130,246,.35), transparent 40%),
+      radial-gradient(40% 60% at 40% 20%, rgba(59,130,246,.2), transparent),
+      #0b1220;display:grid;place-items:center;overflow:hidden}
+    .avatar svg{opacity:.9}
+
+    .t1-projects{grid-template-columns: repeat( auto-fit, minmax(260px, 1fr) )}
+    .badge{font-size:12px;border:1px dashed var(--outline);padding:4px 8px;border-radius:8px}
+
+    @media (max-width: 900px){
+      .t1-hero{grid-template-columns:1fr}
+      .t2{grid-template-columns:1fr}
+      .t2-aside{position:relative;top:auto}
+    }
+  </style>
+</head>
+<body>
+
+  <main class="wrap templates">
+
+    <!-- ===================== Template 1: Nebula ===================== -->
+    <section id="t1" class="template">
+      <div class="card" style="padding:28px">
+        <div class="t1-hero">
+          <div>
+            <div class="badge">Üdvözöllek! · <strong>Ezeket a droidokat keresed!</strong></div>
+            <h1 style="margin:8px 0 8px;font-size:40px;line-height:1.1">Jozó Márk e.v. <span class="muted">— Rendszermérnök</span></h1>
+            <p class="muted" style="max-width:60ch">Több mint 8 éve dolgozom rendszermérnökként, és most elindítottam a saját vállalkozásomat. Az a célom, hogy segítsek a cégeknek és magánszemélyeknek abban, hogy informatikai rendszereik mindig megbízhatóan működjenek. Vállalok üzemeltetést, karbantartást és teljes infrastruktúra kiépítést is – egyszerűen fogalmazva: leveszem a válladról az IT-gondokat, hogy te a saját munkádra koncentrálhass.</p>
+            <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+              <a class="chip" href="" title="Email">Üzemeltetés</a>
+              <a class="chip" href="" title="Email">Karbantartás</a>
+              <a class="chip" href="" title="LinkedIn">Kiépítés</a>
+			  <a class="chip" href="" title="LinkedIn">Tanácsadás</a>
+            </div>
+          </div>
+          <div style="display:flex;justify-content:center">
+            <div class="avatar" aria-hidden="true">
+              <!-- Replace with your headshot if you like -->
+              <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Z" stroke="currentColor" stroke-width="1.25"/>
+                <path d="M3.5 20.5a8.5 8.5 0 0 1 17 0" stroke="currentColor" stroke-width="1.25"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section id="highlights" style="margin-top:24px" class="grid" >
+        <div class="card" style="padding:20px">
+          <h2 style="margin:0 0 10px">Tapasztalatom</h2>
+          <ul class="muted" style="margin:0;padding-left:18px">
+            <li>Placeholder</li>
+            <li>Placeholder</li>
+            <li>Placeholder</li>
+          </ul>
+        </div>
+        <div class="card" style="padding:20px">
+          <h2 style="margin:0 0 10px">Fő tevékenységi körök</h2>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <span class="chip">Windows Server</span>
+            <span class="chip">Active Directory / Azure AD</span>
+            <span class="chip">PowerShell</span>
+            <span class="chip">Intune · SCCM</span>
+            <span class="chip">VMware / Proxmox</span>
+            <span class="chip">Linux</span>
+            <span class="chip">Ansible</span>
+            <span class="chip">Hyper-V</span>
+            <span class="chip">Zabbix · Grafana</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" style="margin-top:24px">
+        <h2>Referenciáim</h2>
+        <div class="t1-projects grid">
+          <article class="card" style="padding:16px">
+            <h3 style="margin:0 0 6px">BlueNet: Zero-Touch Laptop Provisioning</h3>
+            <p class="muted">Autopilot + Intune + WinGet. Fully automated baselines, BitLocker escrow, Defender for Endpoint onboarding.</p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+              <span class="chip">Intune</span><span class="chip">Autopilot</span><span class="chip">PowerShell</span>
+              <a class="btn" href="#" aria-label="Read more about BlueNet">Read case study →</a>
+            </div>
+          </article>
+          <article class="card" style="padding:16px">
+            <h3 style="margin:0 0 6px">SiteRescue: DR for VMware & Proxmox</h3>
+            <p class="muted">Offsite ZFS replication, immutable backups, runbooks. Recovery drills in under 30 minutes.</p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+              <span class="chip">Proxmox</span><span class="chip">ZFS</span><span class="chip">Ansible</span>
+              <a class="btn" href="#">Architecture →</a>
+            </div>
+          </article>
+          <article class="card" style="padding:16px">
+            <h3 style="margin:0 0 6px">Sentinel: SOC-lite Monitoring</h3>
+            <p class="muted">Unified logging to Loki, alerting to Teams, weekly KPI report with SLO burn-down.</p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+              <span class="chip">Grafana</span><span class="chip">Loki</span><span class="chip">Azure</span>
+              <a class="btn" href="#">Dashboards →</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section style="margin-top:24px" class="grid" >
+        <div class="card" style="padding:18px">
+          <h2 style="margin:0 0 10px">Szolgáltatások és árak</h2>
+          <div>
+            <h3 style="margin:0">Senior System Administrator · {{ Company }}</h3>
+            <p class="muted" style="margin:2px 0 8px">2022 — Present · Budapest · Hybrid</p>
+            <ul class="muted" style="margin:0 0 10px 18px">
+              <li>Migrated 600 users to Entra ID; conditional access by device risk.</li>
+              <li>Built golden images and hardening baselines (CIS level 1).</li>
+            </ul>
+          </div>
+          <div>
+            <h3 style="margin:0">System Administrator · {{ Company }}</h3>
+            <p class="muted" style="margin:2px 0 8px">2019 — 2022</p>
+          </div>
+        </div>
+        <div class="card" style="padding:18px">
+          <h2 style="margin:0 0 10px">Kapcsolat</h2>
+          <p class="muted">📫 <a href="mailto:you@example.com">you@example.com</a> · 🔗 <a href="https://github.com/yourhandle">github.com/yourhandle</a> · 🧑‍💼 <a href="https://linkedin.com/in/your-handle">LinkedIn</a></p>
+          <a class="btn" href="#">Download CV (PDF)</a>
+        </div>
+      </section>
+    </section>
+
+  <footer class="wrap" style="margin-top:40px">
+    <p class="muted" style="text-align:center">© <span id="year"></span> Jozó Márk EV · 2025 All rights reserved. </p>
+  </footer>
+
+  <script>
+    // Template switcher
+    const buttons = document.querySelectorAll('.switcher button');
+    const sections = [...document.querySelectorAll('.template')];
+    buttons.forEach(btn => btn.addEventListener('click', () => {
+      const id = btn.dataset.template;
+      sections.forEach(s => s.classList.toggle('hidden', s.id !== id));
+      buttons.forEach(b => b.setAttribute('aria-pressed', String(b === btn)));
+      // focus the first heading in the active section for a11y
+      const firstH = document.querySelector(`#${id} h1, #${id} h2`);
+      if (firstH) firstH.setAttribute('tabindex','-1'), firstH.focus({preventScroll:true});
+      window.scrollTo({ top: (document.querySelector('.topbar').offsetHeight || 0) + 4, behavior: 'smooth' });
+      location.hash = id; // deep-link
+    }));
+
+    // Deep-link support
+    const hash = location.hash.replace('#','');
+    if (hash && document.getElementById(hash)) {
+      document.querySelector(`.switcher button[data-template="${hash}"]`)?.click();
+    }
+
+    // Current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Respect reduced motion
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      window.scrollTo = ({ top }) => window.scroll(0, top);
+    }
+  </script>
+</body>
+</html>
