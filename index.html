@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jozó Márk Portfolio</title>
+  <meta name="description" content="System Engineer" />
+  <style>
+    :root{
+      --bg: #f9f8f6;          /* beige background */
+      --panel: #ffffff;       /* white panels */
+      --panel-2: #f0edea;     /* light beige */
+      --text: #333333;        /* dark grey text */
+      --muted: #666666;       /* muted grey */
+      --accent: #f97316;      /* orange */
+      --accent-light:#fbbf24; /* lighter orange */
+      --outline: rgba(0,0,0,.1);
+      --ring: rgba(249,115,22,.35);
+      --radius: 16px;
+      --shadow: 0 6px 18px rgba(0,0,0,.1);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: var(--bg);
+      color:var(--text);
+      font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Inter, Ubuntu, Cantarell, "Helvetica Neue", Arial;
+      letter-spacing:.2px;
+    }
+
+    a{color:var(--accent); text-decoration:none; transition: color .2s;}
+    a:hover{color:var(--accent-light);}
+    img{max-width:100%;display:block}
+    .hidden{display:none !important}
+
+    /* Shell */
+    .wrap{max-width:1200px;margin-inline:auto;padding:24px 20px 64px}
+    .card{
+      background: linear-gradient(180deg, var(--panel), var(--panel-2));
+      border:1px solid var(--outline);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      transition: transform .2s;
+    }
+    .card:hover{transform:translateY(-3px);}
+
+    .chip{
+      display:inline-flex;align-items:center;gap:6px;
+      border:1px solid var(--outline);
+      padding:6px 12px;border-radius:999px;
+      background:var(--panel-2);
+      font-size:14px;
+    }
+    .muted{color:var(--muted)}
+    .grid{display:grid;gap:16px}
+
+    /* Hero */
+    .t1-hero{display:grid;grid-template-columns: 1.1fr 1fr;gap:24px;align-items:center}
+    .avatar{
+      width:140px;height:140px;border-radius:50%;
+      border:3px solid var(--accent);
+      background:var(--panel-2);
+      display:grid;place-items:center;
+      overflow:hidden;
+      box-shadow:0 4px 12px rgba(0,0,0,.15);
+    }
+
+    .badge{
+      display:inline-block;
+      font-size:13px;
+      border:1px dashed var(--outline);
+      padding:4px 10px;
+      border-radius:8px;
+      background:var(--panel-2);
+      color:var(--accent);
+      font-weight:500;
+    }
+
+    h1,h2,h3{margin:0;color:var(--text)}
+    h1{font-size:40px;line-height:1.2}
+    h2{font-size:24px;margin-bottom:10px}
+    h3{font-size:18px;margin:8px 0}
+
+    .t1-projects{grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))}
+
+    footer{
+      border-top:1px solid var(--outline);
+      margin-top:40px;
+      padding-top:20px;
+      text-align:center;
+      color:var(--muted);
+    }
+    footer ul{list-style:none;padding:0;margin:12px 0 0;display:flex;gap:20px;justify-content:center}
+    footer a{color:var(--muted)}
+    footer a:hover{color:var(--accent)}
+
+    @media (max-width: 900px){
+      .t1-hero{grid-template-columns:1fr;text-align:center}
+    }
+  </style>
+</head>
+<body>
+
+  <main class="wrap templates">
+    <!-- Hero -->
+    <section id="t1" class="template">
+      <div class="card" style="padding:32px">
+        <div class="t1-hero">
+          <div>
+            <div class="badge">Üdvözöllek! · <strong>Ezeket a droidokat keresed!</strong></div>
+            <h1>Jozó Márk e.v. <span class="muted">— Rendszermérnök</span></h1>
+            <p class="muted" style="max-width:60ch">
+              Több mint 8 éve dolgozom rendszermérnökként, és most elindítottam a saját vállalkozásomat.
+              Az a célom, hogy segítsek a cégeknek és magánszemélyeknek abban, hogy informatikai rendszereik mindig megbízhatóan működjenek.
+              Vállalok üzemeltetést, karbantartást és teljes infrastruktúra kiépítést is – egyszerűen fogalmazva: leveszem a válladról az IT-gondokat.
+            </p>
+            <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+              <a class="chip">Üzemeltetés</a>
+              <a class="chip">Karbantartás</a>
+              <a class="chip">Kiépítés</a>
+              <a class="chip">Tanácsadás</a>
+            </div>
+          </div>
+          <div style="display:flex;justify-content:center">
+            <div class="avatar" aria-hidden="true">
+              <svg width="90" height="90" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5">
+                <path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Z"/>
+                <path d="M3.5 20.5a8.5 8.5 0 0 1 17 0"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Highlights -->
+      <section id="highlights" style="margin-top:24px" class="grid" >
+        <div class="card" style="padding:20px">
+          <h2>Tapasztalatom</h2>
+          <ul class="muted" style="margin:0;padding-left:18px">
+            <li>Szombathely, Rendszermérnöki pozíció - 4 év</li>
+            <li>Budapest, Vállalkozások üzemeltetése - 3 év</li>
+            <li>Siófok, Rendszergazdai feladatok - 1 év</li>
+          </ul>
+        </div>
+        <div class="card" style="padding:20px">
+          <h2>Fő tevékenységi körök</h2>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <span class="chip">Hálózatok</span>
+            <span class="chip">Active Directory / Azure AD</span>
+            <span class="chip">Szerverek</span>
+            <span class="chip">Munkaállomások</span>
+            <span class="chip">Virtualizáció</span>
+            <span class="chip">Cloud</span>
+            <span class="chip">M365</span>
+            <span class="chip">Hyper-V</span>
+            <span class="chip">VMWare</span>
+			<span class="chip">VPN</span>
+			<span class="chip">Tűzfal</span>
+			<span class="chip">Monitoring</span>
+			<span class="chip">Adatmentés</span>
+			<span class="chip">WLAN</span>
+			<span class="chip">Domain</span>
+			<span class="chip">Mail szerver</span>
+			<span class="chip">PC</span>
+			<span class="chip">Laptop</span>
+			<span class="chip">Nyomtatók</span>
+			<span class="chip">Klónozás</span>
+			<span class="chip">Adatvisszaállítás</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects" style="margin-top:24px">
+        <h2>Projektjeim</h2>
+        <div class="t1-projects grid">
+          <article class="card" style="padding:20px">
+            <h3>IT infrastruktúra korszerűsítése</h3>
+            <p class="muted">Budapesti cégnél új rack szerver beüzemelése, Active Directory bevezetése. Munkaállomások cseréje. Új Edge router tűzfal és VPN konfigurálás. - Ezáltal a munkafolyamatok felgyorsultak, létrejött az otthoni munkavégzés lehetősége és a cég megfelelt a GDPR előírásoknak.</p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+              <span class="chip">AD</span><span class="chip">Szerver</span><span class="chip">Router</span>
+            </div>
+          </article>
+          <article class="card" style="padding:20px">
+            <h3>Hálózat bővítése, korszerűsítése</h3>
+            <p class="muted">Devecseri idősek otthonában a hálózat megtervezése, kialakítása és korszerűsítése Ubiquiti eszközökel. Megfigyelőrendszer beüzemelése Reolink kamerákkal, helyi NAS rögzítéssel. 13 Access Point, 14 kamera. - Magasabb személyi biztonság, teljes Wi-Fi lefedettség, időtálló kialakítás.</p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+              <span class="chip">Kamera</span><span class="chip">WLAN</span><span class="chip">Lefedettség</span>
+            </div>
+          </article>
+          <article class="card" style="padding:20px">
+            <h3>Szerverpark megújítása</h3>
+            <p class="muted">Szombathelyi cégnél 3db ESXi host és egy 24 bay-es Storage fizikai és logikai megvalósítása. Virtuális környezet, Cluster, Backup és High Availability. - 40 Virtuális Gép gyorsabb működése, magasabb adatbiztonság, nagyobb tárhely.</p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+              <span class="chip">VMWare</span><span class="chip">Adatbiztonság</span><span class="chip">High Availability</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Services & Contact -->
+      <section style="margin-top:24px" class="grid" >
+        <div class="card" style="padding:20px">
+          <h2>Szolgáltatások és árak</h2>
+          <ul class="muted" style="padding-left:18px; margin:0">
+          <li id="szolgesarak">Kiszállási díj - Jákon belül ingyenes</li>
+		  <li id="szolgesarak">Kiszállási díj - 2.000 Ft/15km</li>
+		  <li id="szolgesarak">Általános díj - 5.000 Ft/30 perc</li>
+		  <li id="szolgesarak">Operációs rendszer telepítése + driverek - 10.000 Ft</li>
+		  <li id="szolgesarak">Operációs rendszer telepítése + driverek + adatok visszaállítása - 15.000 Ft</li>
+		  <li id="szolgesarak">PC takarítása + CPU újrapasztázás - 8.000 Ft</li>
+		  <li id="szolgesarak">Laptop takarítása + CPU újrapasztázása - 10.000 Ft</li>
+		  <li id="szolgesarak">Adatvisszaállítás logikailag sérült eszközről - 40.000 Ft</li>
+		  <li id="szolgesarak">Adatmásolás - 5.000 Ft</li>
+		  <li id="szolgesarak">PC konfiguráció összeállítása az adott célra - 5.000 Ft</li>
+		  <li id="szolgesarak">Alkatrész cseréje + tesztelés - 10.000 Ft</li>
+		  <li id="szolgesarak">Hálózati eszköz konfigurálása - Általános díj alapján</li>
+		  <li id="szolgesarak">Adattükrözés - 15.000 Ft</li>
+		  <li id="szolgesarak">BIOS frissítés - 5.000 Ft</li>
+		  <li id="szolgesarak">Vírusirtás, kémprogramok eltávolítása - 10.000 Ft</li>
+		  <li id="szolgesarak">Rendszerüzemeltetés 1-5 munkaállomásig és 1 szerverig - 50.000 Ft/hó</li>
+		  <li id="szolgesarak">Rendszerüzemeltetés 6-10 munkaállomásig és 2 szerverig - 100.000 Ft/hó</li>
+		  <li id="szolgesarak">Rendszerüzemeltetés 11 munkaállomástól és 3 szervertől felfelé - Megegyezés szerint</li>
+		  <li id="hanemtalalja">Ha nem találja amit keres, kérem hívjon fel és megnézem mit tehetek.</li>
+          </ul>
+        </div>
+        <div class="card" style="padding:20px">
+          <h2>Kapcsolat</h2>
+          <p class="muted">
+            📫 <a href="mailto:jm.itexpert@gmail.com">jm.itexpert@gmail.com</a><br>
+            📞 <a href="tel:+36703535143">+36 70 353 5143</a><br>
+            🧑‍💼 <a href="https://www.facebook.com/profile.php?id=61580062791922">Facebook</a>
+          </p>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <p>© <span id="year"></span> Jozó Márk e.v. · All rights reserved.</p>
+    <ul>
+      <li><a href="aszf.html">ÁSZF</a></li>
+      <li><a href="adatkezeles.html">Adatkezelés</a></li>
+      <li><a href="cookie.html">Cookie Szabályzat</a></li>
+    </ul>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
